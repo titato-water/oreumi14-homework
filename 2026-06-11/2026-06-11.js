@@ -50,7 +50,7 @@ function getScoreMessages(scores) {
   return scores.map(score => {
     const grade = getGrade(score)
     
-    return  score + "점은" + grade + "등급입니다"
+    return  `${score}점은 ${grade}등급입니다.`
   })
 }
 console.log(getScoreMessages(scores))
@@ -61,7 +61,7 @@ function printScoreReport(scores) {
   scores.forEach(score => {
     const grade = getGrade(score)
     const passed = isPassed(score) ? "합격" : "불합격"
-    console.log(score + "점: " + grade + "등급," + passed)
+    console.log(`${score}점: ${grade}등급, ${passed}`)
   })
 }
 printScoreReport(scores)
@@ -78,9 +78,9 @@ function printSummary(scores) {
   const passedScores = getPassedScores(scores) 
   const messages = getScoreMessages(scores)
   
-  console.log("평균 점수: " + average + "점" )
-  console.log("합격 점수: " + passedScores)
-  console.log("점수 설명: ")
+  console.log(`평균 점수: ${average}점` )
+  console.log(`합격 점수: ${passedScores}`)
+  console.log(`점수 설명: `)
   messages.forEach(message => {
     console.log(message)
   })
@@ -96,7 +96,7 @@ function printNamedScoreReport(names, scores) {
     const grade = getGrade(score)
     const passed = isPassed(score) ? "합격" : "불합격"
 
-    console.log(name + ": " + score + "점, " + grade + "등급, " + passed)
+    console.log(`${name}:  ${score}점, ${grade}등급, ${passed}`)
   })
 }
 printNamedScoreReport(names, scores)
