@@ -37,6 +37,17 @@ console.log(isPassed(43))
 
 console.log("-------------------------------------------")
 
+function getAverage(scores) {
+  let sum = 0
+
+  for(let i = 0; i < scores.length; i++ ){
+    sum += scores[i]
+  } 
+  return sum / scores.length
+}
+console.log(getAverage(scores))
+
+console.log("-------------------------------------------")
 function getPassedScores(scores) {
   return scores.filter(function(score) {
     return score >= 60
